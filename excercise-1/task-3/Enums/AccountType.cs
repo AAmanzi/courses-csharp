@@ -6,8 +6,8 @@ namespace task_3.Enums
 {
     public enum AccountType
     {
-        Savings,
-        Checking,
-        Giro
+        Savings = 1,
+        Checking = 2,
+        Giro = 3
     }
 }

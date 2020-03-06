@@ -95,14 +95,14 @@ namespace task_3
             Console.WriteLine("| Choose account type:          |");
             PrintLineBreak("|");
             Console.WriteLine();
-            Console.WriteLine("| 0) Savings Account            |");
-            Console.WriteLine("| 1) Checking Account           |");
-            Console.WriteLine("| 2) Giro Account               |");
+            Console.WriteLine($"| {(int)AccountType.Savings}) Savings Account            |");
+            Console.WriteLine($"| {(int)AccountType.Checking}) Checking Account           |");
+            Console.WriteLine($"| {(int)AccountType.Giro}) Giro Account               |");
             PrintLineBreak();
 
             var isAccountTypeValid = Int32.TryParse(Console.ReadLine(), out var accountTypeNumber);
 
-            if (!isAccountTypeValid || (accountTypeNumber != 0 && accountTypeNumber != 1 && accountTypeNumber != 2))
+            if (!isAccountTypeValid || !Enum.IsDefined(typeof(AccountType), accountTypeNumber))
             {
                 Console.WriteLine(" Invalid choice!");
                 PrintLineBreak();
